@@ -2,9 +2,10 @@
   "name": "@erikwatson/snowfall",
   "version": "4.3.0",
   "description": "A beautiful and highly configurable snow effect for your winter themed project",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "files": [
     "dist/**/*"
   ],
@@ -12,12 +13,11 @@
   "author": "Erik Watson <erik@erikwatson.me>",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm exec webpack --config webpack.dev.js",
-    "build:production": "pnpm exec webpack --config webpack.prod.js",
-    "build:all": "pnpm run build && pnpm run build:production",
+    "build": "pnpm exec webpack --config webpack.prod.js && pnpm exec tsc --emitDeclarationOnly && pnpm run build:umd",
+    "build:umd": "pnpm exec webpack --config webpack.umdder.js",
     "build:docs": "pnpm exec typedoc --out ../snowfall-docs src/snowfall.ts --readme README.md",
     "watch": "pnpm exec webpack --config webpack.dev.js --watch",
-    "pub": "pnpm run build:all && npm publish --access public",
+    "pub": "pnpm run build && npm publish --access public",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
-    "@erikwatson/bramble": "^0.13.5",
+    "@erikwatson/bramble": "^0.15.0",
     "@tweenjs/tween.js": "^23.1.2",
     "seedrandom": "^3.0.5"
   },
@@ -62,9 +62,9 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs"
     }
   }
 }

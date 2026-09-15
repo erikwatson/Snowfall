@@ -391,7 +391,7 @@ export { diff } from './config'
 export * from './defaults'
 export { clone } from './utils'
 export { isSimpleLayer } from './utils'
-export {
+export type {
   UserSchedule,
   UserConfig,
   SimpleLayerConfig,
@@ -407,3 +407,24 @@ export {
   In,
   Out
 } from './types'
+
+const snowfall = {
+  start,
+  restart,
+  stop,
+  schedule,
+  setColour,
+  setDensity,
+  setAmplitude,
+  setFrequency,
+  setPaused,
+  togglePaused,
+  setWind,
+  setGravity,
+  setMassMin,
+  setMassMax,
+  setSizeMin,
+  setSizeMax
+}
+
+export default snowfall

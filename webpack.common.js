@@ -1,21 +1,21 @@
-const path = require('path')
-
-module.exports = {
+export default {
   entry: './src/index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    library: { name: 'snowfall', type: 'umd' },
-    globalObject: 'this'
-  },
+
   module: {
     rules: [
       {
         test: /\.(ts|js)$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true
+          }
+        }
       }
     ]
   },
+
   resolve: {
     extensions: ['.ts', '.js']
   }

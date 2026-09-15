@@ -1,3 +1,7 @@
+import * as bramble from '@erikwatson/bramble'
+
+console.log('SNOWFALL BRAMBLE', bramble)
+
 import { Vec2, vec2 } from '@erikwatson/bramble'
 import { lerp, random, rotate } from '../math'
 import { Snowflake } from '../types'
