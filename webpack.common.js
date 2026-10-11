@@ -9,7 +9,7 @@ export default {
         use: {
           loader: 'ts-loader',
           options: {
-            transpileOnly: true
+            transpileOnly: false
           }
         }
       }
