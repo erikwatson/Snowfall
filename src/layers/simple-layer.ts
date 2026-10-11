@@ -14,7 +14,7 @@ export class SimpleLayer
 
   render(gfx: Graphics): void {
     this.snowflakes.forEach(flake => {
-      gfx.transparency(() => {
+      gfx.opacity(() => {
         if (this.config.trail) {
           if (
             flake.previousPosition.x >= 0 &&

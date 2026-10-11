@@ -1,4 +1,4 @@
-import { Graphics, InputState } from '@erikwatson/bramble'
+import { type Graphics, type InputState } from '@erikwatson/bramble'
 import { IImageLayer, ImageLayerConfig } from '../types'
 import { BaseLayer } from './base-layer'
 import { addRotation } from '../snowflake'
@@ -51,9 +51,9 @@ export class ImageLayer
       const size = flake.renderedSize
       const offset = size / 2
 
-      gfx.transparency(() => {
+      gfx.opacity(() => {
         if (this.config.rotate) {
-          gfx.rotation(
+          gfx.rotate(
             () => {
               gfx.image(
                 this.image,
