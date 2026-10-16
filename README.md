@@ -2,19 +2,20 @@
 
 The perfect snow effect for your Winter themed website!
 
-Suggested use: attach it as a fixed background to your page with the content
-displayed over the top. [Check out this example](http://erikwatson.me/?snow).
+Configure the effect yourself or just try some fun presets in our [Config editor](https://erikwatson.github.io/snowfall-editor/).
 
 ## Features
 
-- Easy to use
-- Beautiful
+- Easy to use, beautiful by default.
 - Highly configurable | [API docs](https://erikwatson.github.io/snowfall-docs/) | [Config editor](https://erikwatson.github.io/snowfall-editor/)
-- Consistent density of snowflakes, regardless of screen size
-- No bunching or thinning on resize
-- Scheduling, so you can set it and forget it
-- Scrolls with the page
 - [React wrapper](https://www.npmjs.com/package/@erikwatson/react-snowfall)
+- Multiple layers
+- Scheduling, so you can set it and forget it
+- Scrolls with the page, both vertically and horizontally
+- Consistent density of snowflakes, regardless of screen size
+- Resizing without clumping or thinning
+- Wind-responsive rotation
+- Custom image based snowflakes
 
 ## Instructions
 
