@@ -40,7 +40,7 @@ It's recommended that you make it full screen and attach it to the background, s
 If you're using a CDN, add the following
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.3/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.5.3/dist/index.umd.min.js"></script>
 <script>
   snowfall.start({
     layers: [{}]
@@ -69,7 +69,7 @@ Same as above but we pass a config object. Your config overrides the default set
 If you're using TypeScript, import the UserConfig type too.
 
 ```ts
-import snowfall, { UserConfig } from '@erikwatson/snowfall'
+import snowfall, { type UserConfig } from '@erikwatson/snowfall'
 
 const config: UserConfig = {
   layers: [
@@ -89,7 +89,10 @@ Same as the above, but we pass a schedule config and the optional snowfall confi
 If you're using TypeScript, import the UserSchedule type too.
 
 ```ts
-import snowfall, { UserSchedule } from '@erikwatson/snowfall'
+import snowfall, {
+  type UserSchedule,
+  type UserConfig
+} from '@erikwatson/snowfall'
 
 const userSchedule: UserSchedule = {
   from: { month: 12, day: 1 },
@@ -106,17 +109,6 @@ const config: UserConfig = {
 
 snowfall.schedule(userSchedule, config)
 ```
-
-### CDN Links
-
-[![](https://data.jsdelivr.com/v1/package/npm/@erikwatson/snowfall/badge)](https://www.jsdelivr.com/package/npm/@erikwatson/snowfall)
-
-- Latest 4.x (minified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4/dist/index.min.js`
-- Latest 4.x (unminified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4/dist/index.js`
-- Latest 4.3.x (minified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.3/dist/index.min.js`
-- Latest 4.3.x (unminified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.3/dist/index.js`
-- Specific version (minified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.3.0/dist/index.min.js`
-- Specific version (unminified): `https://cdn.jsdelivr.net/npm/@erikwatson/snowfall@4.3.0/dist/index.min.js`
 
 ## Author
 
